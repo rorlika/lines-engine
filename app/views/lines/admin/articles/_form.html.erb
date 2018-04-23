@@ -55,21 +55,6 @@
       <%= f.cktext_area :content, as: :ckeditor, class: 'ckeditor', input_html: { ckeditor: { height: 400 } } %>
     </div>
 
-    <div class="input-field">
-      <div class="documents">
-        <%= f.label :document, "#{@article.document? ? @article.document.file.filename + ' <span>(' + number_to_human_size(File.size(@article.document.file.file)) + ')</span>' : t('lines.buttons.attach_document').html_safe }".html_safe, class: "attachment-label", title: t('lines.buttons.change_attachment').html_safe -%>
-        <% if @article.document? %>
-          <span class="icon-delete btn-delete-attachment" title="<%= t('lines.buttons.remove_attachment').html_safe %>"></span>
-        <% end %>
-        <%= f.file_field :document, class: "article-document-value" %>
-        <div class="hidden">
-          <%= f.hidden_field :document_cache %>
-          <%= f.check_box :remove_document %>
-        </div>
-      </div>
-
-    </div>
-
     <h2><%= t('activerecord.models.lines/author', count: 2) %> <span style="color: #c10020;">*</span></h2>
 
     <div class="input-field checkbox">
