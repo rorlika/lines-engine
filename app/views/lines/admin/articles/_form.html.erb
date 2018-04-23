@@ -52,7 +52,7 @@
     </div>
 
     <div class="input-field editor required">
-      <%= f.text_area :content, placeholder: true, rows: 1, data: {editor: "codemirror"} %>
+      <%= f.cktext_area :content, as: :ckeditor, class: 'ckeditor', input_html: { ckeditor: { height: 400 } } %>
     </div>
 
     <div class="input-field">
@@ -93,7 +93,7 @@
     <%= render_navbar do %>
       <%= f.submit t('lines.buttons.save_article').html_safe, class: "btn btn-save-publish highlight" %>
       <%= link_to t('lines.buttons.cancel').html_safe, admin_articles_path, class: "btn btn-cancel" %>
-    <% end %>        
+    <% end %>
 
   </div>
 <% end %>
